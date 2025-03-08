@@ -1,0 +1,131 @@
+@import './base.css';
+
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  color: #323233;
+  font-size: 14px;
+  background-color: #f7f8fa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 移除输入框外边框 */
+input, textarea {
+  outline: none;
+  border: none;
+}
+
+/* 修复ios输入框内阴影 */
+input, textarea {
+  -webkit-appearance: none;
+}
+
+/* 修复按钮点击时的默认样式 */
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+/* 统一链接样式 */
+a {
+  text-decoration: none;
+  color: #1989fa;
+}
+
+/* 隐藏滚动条但保持可滚动 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 通用动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* 安全区域适配 */
+.safe-area-inset-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-inset-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* 自定义颜色变量 */
+:root {
+  --primary-color: #1989fa;
+  --success-color: #07c160;
+  --danger-color: #ee0a24;
+  --warning-color: #ff8800;
+  --text-color: #323233;
+  --text-color-light: #969799;
+  --border-color: #ebedf0;
+  --bg-color: #f7f8fa;
+  --card-bg-color: #ffffff;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
